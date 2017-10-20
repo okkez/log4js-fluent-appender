@@ -10,6 +10,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "log4js": ">= 2",
-    "fluent-logger": "*"
+    "fluent-logger": ""
+  },
+  "devDependencies": {
+    "async": "",
+    "chai": "",
+    "log4js": "<2",
+    "mocha": "",
+    "testdouble": ""
   }
 }
