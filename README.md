@@ -2,7 +2,7 @@
 
 This package provides [log4js-node](https://github.com/nomiddlename/log4js-node) appender for [fluent-logger](https://github.com/fluent/fluent-logger-node).
 
-[![npm version](https://badge.fury.io/js/log4js-fluent-appender.svg)](https://badge.fury.io/js/log4js-fluent-appender)
+[![NPM](https://nodei.co/npm/log4js-fluent-appender.png)](https://nodei.co/npm/log4js-fluent-appender/)
 
 [![Build Status](https://travis-ci.org/okkez/log4js-fluent-appender.svg?branch=master)](https://travis-ci.org/okkez/log4js-fluent-appender)
 
