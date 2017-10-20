@@ -1,8 +1,12 @@
-# Log4js appender for fluent-logger
+# log4js appender for fluent-logger
+
+This package provides [log4js-node](https://github.com/nomiddlename/log4js-node) appender for [fluent-logger](https://github.com/fluent/fluent-logger-node).
 
 ## Install
 
-TODO
+```
+$ npm install log4js-fluent-appender
+```
 
 ## Prerequistes
 
@@ -57,8 +61,8 @@ setTimeout(() => {
 
 See also:
 
-* https://github.com/fluent/fluent-logger-node
-* https://github.com/nomiddlename/log4js-node
+* [fluent-logger-node](https://github.com/fluent/fluent-logger-node)
+* [log4js-node](https://github.com/nomiddlename/log4js-node)
 
 ## License
 
