@@ -1,13 +1,23 @@
 {
   "name": "log4js-fluent-appender",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Custom appender for log4js based on fluent-logger",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -t 10000 --recursive"
   },
-  "author": "okkez",
+  "author": {
+    "name": "okkez",
+    "email": "okkez000@gmail.com",
+    "url": "http://okkez.net"
+  },
   "license": "Apache-2.0",
+  "keywords": [
+    "log4js",
+    "logger",
+    "fluent",
+    "fluentd"
+  ],
   "dependencies": {
     "log4js": ">= 2",
     "fluent-logger": ""
