@@ -4,7 +4,8 @@
   "description": "Custom appender for log4js based on fluent-logger",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha -t 10000 --recursive"
+    "test": "mocha -t 10000 --recursive",
+    "lint": "eslint ."
   },
   "author": {
     "name": "okkez",
@@ -27,6 +28,8 @@
     "chai": "",
     "log4js": "<2",
     "mocha": "",
-    "testdouble": ""
+    "testdouble": "",
+    "eslint": "^4.11.0",
+    "eslint-plugin-node": ""
   }
 }
