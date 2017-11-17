@@ -1,4 +1,6 @@
 'use strict';
+/* globals describe, it, beforeEach, afterEach  */
+/* eslint node/no-unpublished-require: ["error", {"allowModules": ["testdouble"]}] */
 const td = require('testdouble');
 const log4js = require('log4js');
 const fluentLogger = require('fluent-logger');
