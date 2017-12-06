@@ -1,6 +1,6 @@
 {
   "name": "log4js-fluent-appender",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom appender for log4js based on fluent-logger",
   "main": "./lib/index.js",
   "scripts": {
