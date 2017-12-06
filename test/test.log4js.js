@@ -51,6 +51,7 @@ describe('log4js-fluent-appender', () => {
       category: 'default',
       levelInt: 20000,
       levelStr: 'INFO',
+      context: {},
       data: 'This is info message!'
     }));
     done();
@@ -75,8 +76,46 @@ describe('log4js-fluent-appender', () => {
       category: 'default',
       levelInt: 20000,
       levelStr: 'INFO',
+      context: {},
       data: 'This is info message!'
     }));
     done();
   });
+
+  it('should log context', (done) => {
+    const tag_prefix = 'tag_prefix';
+    const options = {
+      levelTag: false,
+      host: 'localhost',
+      port: 24224
+    };
+    const fakeSender = {
+      emit: td.function()
+    };
+    td
+      .when(fluentLogger.createFluentSender(tag_prefix, options))
+      .thenReturn(fakeSender);
+    const logger = getLogger(tag_prefix, options);
+
+    logger.addContext('context_key1', 'context_value');
+    logger.addContext('context_key2', 1234);
+    logger.addContext('context_key3', '');
+    logger.removeContext('context_key3');
+
+    logger.info('This is info message!');
+
+    td.verify(fakeSender.emit({
+      timestamp: td.matchers.anything(),
+      category: 'default',
+      levelInt: 20000,
+      levelStr: 'INFO',
+      context: {
+        context_key1: 'context_value',
+        context_key2: 1234
+      },
+      data: 'This is info message!'
+    }));
+    done();
+  });
+
 });
