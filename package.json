@@ -20,8 +20,9 @@
     "fluentd"
   ],
   "dependencies": {
-    "log4js": ">= 2",
-    "fluent-logger": ""
+    "es6-object-assign": "^1.1.0",
+    "fluent-logger": "",
+    "log4js": ">= 2"
   },
   "devDependencies": {
     "async": "",
