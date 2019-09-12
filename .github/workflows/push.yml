@@ -1,0 +1,13 @@
+on: push
+name: New workflow
+jobs:
+  build:
+    name: Setup Node.js for use with actions
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup Node.js for use with actions
+      uses: actions/setup-node@v1
+      with:
+        entrypoint: npm
+        args: install
