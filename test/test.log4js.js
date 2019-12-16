@@ -118,4 +118,37 @@ describe('log4js-fluent-appender', () => {
     done();
   });
 
+  it('should log extra', (done) => {
+    const tag_prefix = 'tag_prefix';
+    const options = {
+      levelTag: false,
+      host: 'localhost',
+      port: 24224
+    };
+    const fakeSender = {
+      emit: td.function()
+    };
+    td
+      .when(fluentLogger.createFluentSender(tag_prefix, options))
+      .thenReturn(fakeSender);
+    const logger = getLogger(tag_prefix, options);
+
+    logger.info('This is info message!', {extra1: true, extra2: false}, {extra3: true});
+
+    td.verify(fakeSender.emit({
+      timestamp: td.matchers.anything(),
+      category: 'default',
+      levelInt: 20000,
+      levelStr: 'INFO',
+      context: {},
+      data: 'This is info message!',
+      extra: {
+        extra1: true,
+        extra2: false,
+        extra3: true,
+      }
+    }));
+    done();
+  });
+
 });
